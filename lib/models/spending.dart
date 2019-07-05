@@ -5,49 +5,49 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 //
 //     final user = userFromJson(jsonString);
 
-Learnt learntFromJson(String str) {
+Spending userFromJson(String str) {
   final jsonData = json.decode(str);
-  return Learnt.fromJson(jsonData);
+  return Spending.fromJson(jsonData);
 }
 
-String learntToJson(Learnt data) {
+String userToJson(Spending data) {
   final dyn = data.toJson();
   return json.encode(dyn);
 }
 
-class Learnt {
+class Spending {
   String userId;
   String id;
-  String description;
-  String question;
+  String reason;
+  String amount;
   String date;
 
-  Learnt({
+
+  Spending({
     this.userId,
     this.id,
-    this.description,
-    this.question,
+    this.reason,
+    this.amount,
     this.date
   });
 
-  factory Learnt.fromJson(Map<String, dynamic> json) => new Learnt(
+  factory Spending.fromJson(Map<String, dynamic> json) => new Spending(
       userId: json["userId"],
       id: json["id"],
-      description: json["description"],
-      question: json["question"],
+      reason: json["reason"],
+      amount: json["amount"],
       date: json["date"]
   );
 
   Map<String, dynamic> toJson() => {
     "userId": userId,
     "id": id,
-    "description": description,
-    "question": question,
+    "reason": reason,
+    "amount": amount,
     "date": date
-
   };
 
-  factory Learnt.fromDocument(DocumentSnapshot doc) {
-    return Learnt.fromJson(doc.data);
+  factory Spending.fromDocument(DocumentSnapshot doc) {
+    return Spending.fromJson(doc.data);
   }
 }
