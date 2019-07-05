@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "612604546122",
+    "firebase_url": "https://project-management-cytex.firebaseio.com",
+    "project_id": "project-management-cytex",
+    "storage_bucket": "project-management-cytex.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612604546122:android:81cf7ed47dd09080",
+        "android_client_info": {
+          "package_name": "zw.co.cytex.cytex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612604546122-bnaftjol66jtn0om7gpebv15iemehekb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgmmSTuYAhHhwYgNJLOaylQZE2fzJJ8YI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612604546122-bnaftjol66jtn0om7gpebv15iemehekb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
