@@ -19,6 +19,7 @@ class Question {
   String userId;
   String id;
   String question;
+  String answer;
   String date;
   String status;
 
@@ -26,6 +27,7 @@ class Question {
     this.userId,
     this.id,
     this.question,
+    this.answer,
     this.date,
     this.status
   });
@@ -34,6 +36,7 @@ class Question {
       userId: json["userId"],
       id: json["id"],
       question: json["question"],
+      answer: json["answer"],
       date: json["date"],
       status: json["status"]
   );
@@ -42,6 +45,7 @@ class Question {
     "userId": userId,
     "id": id,
     "question": question,
+    "answer": answer,
     "date": date,
     "status": status
 

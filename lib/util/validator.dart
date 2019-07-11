@@ -26,6 +26,15 @@ class Validator {
       return null;
   }
 
+  static String validateField(String value) {
+    Pattern pattern = r"^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$";
+    RegExp regex = new RegExp(pattern);
+    if (!regex.hasMatch(value))
+      return 'Please enter something.';
+    else
+      return null;
+  }
+
   static String validateNumber(String value) {
     Pattern pattern = r'^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$';
     RegExp regex = new RegExp(pattern);

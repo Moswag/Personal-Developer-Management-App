@@ -18,7 +18,7 @@ String projectToJson(Project data) {
 class Project {
   String userId;
   String id;
-  String name;
+  String title;
   String client;
   String documentationUrl;
   double amount;
@@ -31,7 +31,7 @@ class Project {
   Project({
     this.userId,
     this.id,
-    this.name,
+    this.title,
     this.client,
     this.documentationUrl,
     this.amount,
@@ -45,7 +45,7 @@ class Project {
   factory Project.fromJson(Map<String, dynamic> json) => new Project(
       userId: json["userId"],
       id: json["id"],
-      name: json["name"],
+      title: json["title"],
       client: json["client"],
       documentationUrl: json["documentationUrl"],
       amount: json["amount"],
@@ -60,9 +60,9 @@ class Project {
   Map<String, dynamic> toJson() => {
     "userId": userId,
     "id": id,
-    "name": name,
+    "title": title,
     "client": client,
-    "email": documentationUrl,
+    "documentationUrl": documentationUrl,
     "amount":amount,
     "tools": tools,
     "status": status,

@@ -23,6 +23,8 @@ class Business {
   String nature;
   String date;
   double balance;
+  String status;
+  int idLength;
 
   Business({
     this.userId,
@@ -31,7 +33,9 @@ class Business {
     this.amount,
     this.nature,
     this.date,
-    this.balance
+    this.balance,
+    this.status,
+    this.idLength
   });
 
   factory Business.fromJson(Map<String, dynamic> json) => new Business(
@@ -41,7 +45,9 @@ class Business {
       amount: json["amount"],
       nature: json["nature"],
       date: json["date"],
-      balance: json["balance"]
+      balance: json["balance"],
+      status: json["status"],
+      idLength: json["idLength"]
   );
 
   Map<String, dynamic> toJson() => {
@@ -51,7 +57,9 @@ class Business {
     "amount": amount,
     "nature": nature,
     "date":date,
-    "balance":balance
+    "balance":balance,
+    "status":status,
+    "idLength":idLength
 
   };
 

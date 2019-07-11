@@ -8,8 +8,10 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 enum authProblems { UserNotFound, PasswordNotValid, NetworkError, UnknownError }
-
-class Auth {
+abstract class BaseAuth{
+  Future<String> currentUser();
+}
+class Auth extends BaseAuth {
   static Future<String> signUp(String email, String password) async {
     FirebaseUser user = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password);
@@ -102,6 +104,11 @@ class Auth {
   static Future<FirebaseUser> getCurrentFirebaseUser() async {
     FirebaseUser currentUser = await FirebaseAuth.instance.currentUser();
     return currentUser;
+  }
+
+  Future<String> currentUser() async{
+    FirebaseUser user=await FirebaseAuth.instance.currentUser();
+    return user.uid;
   }
 
   static Future<User> getUserLocal() async {

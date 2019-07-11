@@ -19,8 +19,9 @@ class Spending {
   String userId;
   String id;
   String reason;
-  String amount;
+  double amount;
   String date;
+  String time;
 
 
   Spending({
@@ -28,7 +29,8 @@ class Spending {
     this.id,
     this.reason,
     this.amount,
-    this.date
+    this.date,
+    this.time
   });
 
   factory Spending.fromJson(Map<String, dynamic> json) => new Spending(
@@ -36,7 +38,8 @@ class Spending {
       id: json["id"],
       reason: json["reason"],
       amount: json["amount"],
-      date: json["date"]
+      date: json["date"],
+      time: json["time"]
   );
 
   Map<String, dynamic> toJson() => {
@@ -44,7 +47,8 @@ class Spending {
     "id": id,
     "reason": reason,
     "amount": amount,
-    "date": date
+    "date": date,
+    "time": time
   };
 
   factory Spending.fromDocument(DocumentSnapshot doc) {

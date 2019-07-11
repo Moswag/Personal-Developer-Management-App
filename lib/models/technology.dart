@@ -20,6 +20,7 @@ class Technology {
   String id;
   String name;
   String description;
+  String date;
   int numberOfUse;
 
   Technology({
@@ -27,6 +28,7 @@ class Technology {
     this.id,
     this.name,
     this.description,
+    this.date,
     this.numberOfUse
   });
 
@@ -35,6 +37,7 @@ class Technology {
       id: json["id"],
       name: json["name"],
       description: json["description"],
+      date: json["date"],
       numberOfUse: json["numberOfUse"]
   );
 
@@ -43,6 +46,7 @@ class Technology {
     "id": id,
     "name": name,
     "description": description,
+    "date": date,
     "numberOfUse":numberOfUse
 
   };

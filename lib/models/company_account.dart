@@ -17,24 +17,28 @@ String accountToJson(CompanyAccount data) {
 
 class CompanyAccount {
   String userId;
-  String balance;
+  double balance;
+  double allTransactionAmounts;
   String date;
 
   CompanyAccount({
     this.userId,
     this.balance,
+    this.allTransactionAmounts,
     this.date
   });
 
   factory CompanyAccount.fromJson(Map<String, dynamic> json) => new CompanyAccount(
       userId: json["userId"],
       balance: json["balance"],
+      allTransactionAmounts: json["allTransactionAmounts"],
       date: json["date"]
   );
 
   Map<String, dynamic> toJson() => {
     "userId": userId,
     "balance": balance,
+    "allTransactionAmounts":allTransactionAmounts,
     "date": date
 
   };

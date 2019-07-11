@@ -16,22 +16,30 @@ String ideaToJson(Idea data) {
 }
 
 class Idea {
-  String description;
+  String userId;
+  String id;
+  String idea;
   String date;
 
 
   Idea({
-    this.description,
+    this.userId,
+    this.id,
+    this.idea,
     this.date,
   });
 
   factory Idea.fromJson(Map<String, dynamic> json) => new Idea(
-      description: json["description"],
+    userId: json["userId"],
+      id: json["id"],
+      idea: json["idea"],
       date: json["date"]
   );
 
   Map<String, dynamic> toJson() => {
-    "description": description,
+    "userId":userId,
+    "id":id,
+    "idea": idea,
     "date": date
 
   };

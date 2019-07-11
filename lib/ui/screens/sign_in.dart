@@ -8,7 +8,13 @@ import 'package:cytex/util/auth.dart';
 import 'package:cytex/util/validator.dart';
 import 'package:cytex/ui/widgets/loading.dart';
 
+import 'project/view_projects.dart';
+
 class SignInScreen extends StatefulWidget {
+  SignInScreen({this.auth,this.onSignedIn});
+
+  final BaseAuth auth;
+  final VoidCallback onSignedIn;
   _SignInScreenState createState() => _SignInScreenState();
 }
 
@@ -171,7 +177,7 @@ class _SignInScreenState extends State<SignInScreen> {
         //need await so it has chance to go through error if found.
         await StateWidget.of(context).logInUser(email, password);
         await Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext context)=>new DashBoardPage()));
+            MaterialPageRoute(builder: (BuildContext context)=>new ViewProjects()));
        // await Navigator.pushNamed(context, '/');
       } catch (e) {
         _changeLoadingVisible();
